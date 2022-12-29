@@ -1,15 +1,19 @@
-import { getInput, setOutput, setFailed } from '@actions/core'
-import { grant } from './token'
+const core = require('@actions/core')
+const token = require('./token')
 
-try {
-  const issuerUri = getInput('issuer')
-  const clientId = getInput('clientId')
-  const clientSecret = getInput('clientSecret')
-  const scope = getInput('scope')
-  
-  const accessToken = await grant(issuerUri, clientId, clientSecret, scope)
-  
-  setOutput('access_token', accessToken)
-} catch (error) {
-  setFailed(error.message);
+async function run() {
+  try {
+    const issuerUri = core.getInput('issuer')
+    const clientId = core.getInput('clientId')
+    const clientSecret = core.getInput('clientSecret')
+    const scope = core.getInput('scope')
+    
+    const accessToken = await token.grant(issuerUri, clientId, clientSecret, scope)
+    
+    core.setOutput('access_token', accessToken)
+  } catch (error) {
+    core.setFailed(error.message);
+  }
 }
+
+run()

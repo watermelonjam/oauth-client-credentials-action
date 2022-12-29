@@ -1,7 +1,7 @@
-import { Issuer } from 'openid-client'
+const openid = require('openid-client')
 
 export async function grant(issuerUri, clientId, clientSecret, scope) {
-  const issuer = await Issuer.discover(issuerUri)
+  const issuer = await openid.Issuer.discover(issuerUri)
   console.log('Discovered issuer %s: %O', issuer.issuer, issuer.metadata)
 
   const client = new issuer.Client({
