@@ -1,0 +1,17 @@
+on: [push]
+
+jobs:
+  get_token:
+    runs-on: ubuntu-latest
+    name: Get an OAuth 2.0 client credentials token
+    steps:
+    - name: Get the token
+      id: get
+      uses: watermelonjam/oauth-client-credentials-action@v0.1
+      with:
+        issuer: ${{ secrets.AZURE_ISSUER }}
+        clientId: ${{ secrets.AZURE_CLIENT_ID }}
+        clientSecret: ${{ secrets.AZURE_CLIENT_SECRET }}
+        scope: ${{ secrets.TEST_REQUEST_SCOPE }}
+    - name: Print the token
+      run: echo "The access token is ${{ steps.get.outputs.access_token }}"
