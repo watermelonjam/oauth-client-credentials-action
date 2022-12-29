@@ -9,7 +9,7 @@ try {
   const scope = getInput('scope')
   
   const issuer = await Issuer.discover(issuerUri)
-  console.log('Discovered issuer %s %O', issuer.issuer, issuer.metadata)
+  console.log('Discovered issuer %s: %O', issuer.issuer, issuer.metadata)
   
   const client = new issuer.Client({
     client_id: clientId,
@@ -17,13 +17,14 @@ try {
     response_types: ['token']
   })
   
-  const  grantResponse = await client.grant({
+  const grantResponse = await client.grant({
       grant_type: 'client_credentials',
       scope: scope
   })
+  console.log('Grant response: %O', grantResponse)
   const accessToken = grantResponse.access_token
   
-  setOutput('access_tokne', accessToken)
+  setOutput('access_token', accessToken)
 
   const payload = JSON.stringify(context.payload, undefined, 2)
   console.log(`The event payload: ${payload}`);
