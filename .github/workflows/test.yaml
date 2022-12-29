@@ -1,13 +1,25 @@
-on: [push]
+on:
+  pull_request:
+  push:
+    branches: [main]
 
 jobs:
-  get_token:
+  lint:
+    runs-on: ubuntu-latest
+    name: ES6 linter
+    steps:
+    - uses: actions/checkout@v3
+    - run: npm ci
+    - run: npm run lint
+
+  test:
     runs-on: ubuntu-latest
     name: Get an OAuth 2.0 client credentials token
     steps:
+    - uses: actions/checkout@v3
     - name: Get the token
       id: get
-      uses: watermelonjam/oauth-client-credentials-action@v0.7
+      uses: ./
       with:
         issuer: ${{ secrets.AZURE_ISSUER }}
         clientId: ${{ secrets.AZURE_CLIENT_ID }}
