@@ -1,0 +1,25 @@
+{
+  "name": "oauth-client-credentials-action",
+  "version": "1.0.0",
+  "description": "Acquire OAuth 2.0 client credentials token for API invocation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/watermelonjam/oauth-client-credentials.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/watermelonjam/oauth-client-credentials/issues"
+  },
+  "homepage": "https://github.com/watermelonjam/oauth-client-credentials#readme",
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@actions/github": "^5.1.1",
+    "openid-client": "^5.3.1"
+  }
+}

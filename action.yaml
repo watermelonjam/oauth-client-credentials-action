@@ -1,0 +1,18 @@
+name: 'OAuth 2.0 Client Credentials'
+description: 'Acquire OAuth 2.0 client credentials token for API invocation'
+inputs:
+  issuer:
+    description: 'URI of the OpenID issuer'
+    required: true
+  clientId:
+    description: 'OAuth 2.0 client identifier'
+    required: true
+  clientSecret:
+    description: 'Client application secret value'
+    required: true
+outputs:
+  access_token: # id of output
+    description: 'The client credentials token'
+runs:
+  using: 'node16'
+  main: 'index.js'
