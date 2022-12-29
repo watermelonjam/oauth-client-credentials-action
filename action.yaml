@@ -10,6 +10,9 @@ inputs:
   clientSecret:
     description: 'Client application secret value'
     required: true
+  scope:
+    description: 'Scope identifying resources to be accessed with the token'
+    required: true
 outputs:
   access_token: # id of output
     description: 'The client credentials token'

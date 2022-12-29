@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/watermelonjam/oauth-client-credentials.git"
+    "url": "git+https://github.com/watermelonjam/oauth-client-credentials-action.git"
   },
   "keywords": [],
   "author": "",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/watermelonjam/oauth-client-credentials/issues"
+    "url": "https://github.com/watermelonjam/oauth-client-credentials-action/issues"
   },
-  "homepage": "https://github.com/watermelonjam/oauth-client-credentials#readme",
+  "homepage": "https://github.com/watermelonjam/oauth-client-credentials-action#readme",
   "dependencies": {
     "@actions/core": "^1.10.0",
     "@actions/github": "^5.1.1",
