@@ -7,7 +7,7 @@ jobs:
     steps:
     - name: Get the token
       id: get
-      uses: watermelonjam/oauth-client-credentials-action@v0.5
+      uses: watermelonjam/oauth-client-credentials-action@v0.6
       with:
         issuer: ${{ secrets.AZURE_ISSUER }}
         clientId: ${{ secrets.AZURE_CLIENT_ID }}
